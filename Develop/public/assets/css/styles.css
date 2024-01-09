@@ -5,11 +5,11 @@ body {
   padding: 0;
 }
 
-.save-note, .new-note, .clear-btn {
+.save-note {
   display: none;
 }
 
-.icons {
+.icons i {
   margin-left: 15px;
   margin-right: 15px;
   font-size: 1.5rem;
@@ -58,11 +58,6 @@ body {
   border-top: none;
   border-top-right-radius: 0;
   border-top-left-radius: 0;
-}
-
-.list-item-title {
-  display: inline-block;
-  width: 75%;
 }
 
 .list-container i {
