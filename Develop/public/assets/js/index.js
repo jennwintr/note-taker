@@ -1,19 +1,17 @@
-let noteForm;
-let noteTitle;
-let noteText;
-let saveNoteBtn;
-let newNoteBtn;
-let noteList;
+document.addEventListener("DOMContentLoaded", () => {
+  let noteTitle;
+  let noteText;
+  let saveNoteBtn;
+  let newNoteBtn;
+  let noteList;
 
-if (window.location.pathname === '/notes') {
-  noteForm = document.querySelector('.note-form');
-  noteTitle = document.querySelector('.note-title');
-  noteText = document.querySelector('.note-textarea');
-  saveNoteBtn = document.querySelector('.save-note');
-  newNoteBtn = document.querySelector('.new-note');
-  clearBtn = document.querySelector('.clear-btn');
-  noteList = document.querySelectorAll('.list-container .list-group');
-}
+  if (window.location.pathname === "/notes") {
+    noteTitle = document.querySelector(".note-title");
+    noteText = document.querySelector(".note-textarea");
+    saveNoteBtn = document.querySelector(".save-note");
+    newNoteBtn = document.querySelector(".new-note");
+    noteList = document.querySelectorAll(".list-container .list-group");
+  }
 
 // Show an element
 const show = (elem) => {
@@ -55,18 +53,13 @@ const deleteNote = (id) =>
 
 const renderActiveNote = () => {
   hide(saveNoteBtn);
-  hide(clearBtn);
 
   if (activeNote.id) {
-    show(newNoteBtn);
     noteTitle.setAttribute('readonly', true);
     noteText.setAttribute('readonly', true);
     noteTitle.value = activeNote.title;
     noteText.value = activeNote.text;
   } else {
-    hide(newNoteBtn);
-    noteTitle.removeAttribute('readonly');
-    noteText.removeAttribute('readonly');
     noteTitle.value = '';
     noteText.value = '';
   }
